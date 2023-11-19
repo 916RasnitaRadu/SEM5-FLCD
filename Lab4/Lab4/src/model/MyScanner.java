@@ -1,6 +1,7 @@
 package model;
 
 import exceptions.ScannerException;
+import finite_automata.FiniteAutomata;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -125,18 +126,30 @@ public class MyScanner {
     }
 
     private boolean treatIntegerConstant() {
-
-        var matcher = regexInteger.matcher(program.substring(index));
-
-        if (!matcher.find()) { return false; }
+//
+//        var matcher = regexInteger.matcher(program.substring(index));
+//
+//        if (!matcher.find()) { return false; }
 
         // case when there are letters after the digits
         if (Pattern.compile("^([+-]?[1-9][0-9]*|0)[a-zA-Z_]").matcher(program.substring(index)).find()) {
             return false;
         }
 
+        FiniteAutomata finiteAutomata = new FiniteAutomata("src/finite_automata/resources/int_const.in");
+        var intConst = finiteAutomata.getNextAcceptedSequence(program.substring(index));
+
+        if (Objects.equals(intConst, null)) {
+            return false;
+        }
+
+        if ((intConst.charAt(0) == '+' || intConst.charAt(0) == '-') && this.programInternalForm.size() > 0 &&
+                (this.programInternalForm.get(this.programInternalForm.size() - 1).getFirst().equals("const") || this.programInternalForm.get(programInternalForm.size() - 1).getFirst().equals("id"))) {
+            return false;
+        }
+
         // we take the matched sequence and increase the index
-        var intConst = matcher.group(1);
+        //var intConst = matcher.group(1);
         index += intConst.length();
         Pair<Integer,Integer> position;
         try {
@@ -201,13 +214,16 @@ public class MyScanner {
     }
 
     private boolean treatIdentifier() {
-        var matcher = regexIdentifier.matcher(program.substring(index));
+//        var matcher = regexIdentifier.matcher(program.substring(index));
+//
+//        if (!matcher.find()) { return false; }
+//
+//        String identifier = matcher.group(1);
 
-        if (!matcher.find()) { return false; }
+        FiniteAutomata finiteAutomata = new FiniteAutomata("src/finite_automata/resources/identifier.in");
+        String identifier = finiteAutomata.getNextAcceptedSequence(program.substring(index));
 
-        String identifier = matcher.group(1);
-
-      //  if (reservedWords.contains(identifier)) { return false; }
+        if (reservedWords.contains(identifier) || identifier == null) { return false; }
 
         index += identifier.length();
         Pair<Integer,Integer> position;

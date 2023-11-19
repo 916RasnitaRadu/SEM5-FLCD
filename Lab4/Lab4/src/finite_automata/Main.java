@@ -20,9 +20,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        FiniteAutomata fa = new FiniteAutomata("src/finite_automata/resources/fa.in");
+        FiniteAutomata fa = new FiniteAutomata("src/finite_automata/resources/identifier.in");
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        boolean ok = true;
+        while (ok) {
             printMenu();
             int option = scanner.nextInt();
             scanner.nextLine();
@@ -57,6 +58,7 @@ public class Main {
                     }
                     break;
                 case 0:
+                    ok = false;
                     break;
                 default:
                     System.out.println("Invalid option!");

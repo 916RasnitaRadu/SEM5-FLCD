@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="120029d6-6c13-4344-840b-ebd3fc76e0c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Lab3/out/production/Lab3/model/MyScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lab3/out/production/Lab3/model/MyScanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab3/src/input/p1.vtm" beforeDir="false" afterPath="$PROJECT_DIR$/Lab3/src/input/p1.vtm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab3/src/model/MyScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab3/src/model/MyScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/FiniteAutomata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/FiniteAutomata.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/Transition.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/Transition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab4/Lab4/src/finite_automata/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/Lab4/src/finite_automata/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,20 +16,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2XzK7b47afBdrLjlAd7hLRCmfsy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Faculta/LFTC/SEM5-FLCD/Lab3"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Faculta/LFTC/SEM5-FLCD/Lab3&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,6 +42,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699626301807</updated>
       <workItem from="1699626303415" duration="41000" />
+      <workItem from="1700202037877" duration="28000" />
     </task>
     <servers />
   </component>
