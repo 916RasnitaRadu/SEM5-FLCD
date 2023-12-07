@@ -5,8 +5,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
+
+        Test test = new Test();
+        test.testAll();
+        System.out.println("Tests passed!");
 
         Grammar grammar;
         Parser parser;
@@ -20,26 +24,29 @@ public class Main {
                 String option = scanner.nextLine();
 
                 switch (option) {
-                    case "1" -> {
+                    case "1":
                         grammar = Grammar.fromFile("g1.txt");
                         parser = new Parser(grammar);
                         System.out.println(grammar);
                         System.out.println("First: " + parser.getFirstSet());
                         System.out.println("Follow: " + parser.getFollowSet());
-                    }
-                    case "2" -> {
+                        break;
+                    case "2":
                         grammar = Grammar.fromFile("g2.txt");
                         parser = new Parser(grammar);
                         System.out.println(grammar);
                         System.out.println("First: " + parser.getFirstSet());
                         System.out.println("Follow: " + parser.getFollowSet());
-                    }
-                    case "x" -> {
+                        break;
+                    case "x":
                         System.out.println("Exiting...");
                         scanner.close();
                         System.exit(0);
-                    }
-                    default -> System.out.println("Invalid option!");
+                        break;
+                    default:
+                        System.out.println("Invalid option!");
+                        break;
+
                 }
             }
         }
