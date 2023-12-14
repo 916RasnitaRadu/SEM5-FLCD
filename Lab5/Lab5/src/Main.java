@@ -28,25 +28,20 @@ public class Main {
 
         while (go) {
             printMenuOperations();
-            System.out.print(">");
+            System.out.print("> ");
             option = scanner.nextLine();
             switch (option) {
-                case "1":
-                    System.out.println(g);
-                    break;
-                case "2":
+                case "1" -> System.out.println(g);
+                case "2" -> {
                     System.out.print("Enter non-terminal: ");
-                    String nonterm = scanner.next();
+                    String nonterm = scanner.nextLine();
                     List<String> productions = g.getProductionsFor(nonterm);
                     for (String p : productions) {
                         System.out.println(p);
                     }
-                    break;
-                case "0":
-                    go = false;
-                    break;
-                default:
-                    System.err.println("Invalid option");
+                }
+                case "0" -> go = false;
+                default -> System.err.println("Invalid option");
             }
         }
     }
@@ -56,21 +51,13 @@ public class Main {
         boolean go = true;
         while (go) {
             printMenuGrammar();
-            System.out.print(">");
+            System.out.print("> ");
             String option = scanner.nextLine();
             switch (option) {
-                case "1":
-                    grammar("g1.txt");
-                    break;
-                case "2":
-                    grammar("g2.txt");
-                    break;
-                case "0":
-                    go = false;
-                    break;
-                default:
-                    System.err.println("Invalid option!");
-                    break;
+                case "1" -> grammar("g1.txt");
+                case "2" -> grammar("g2.txt");
+                case "0" -> go = false;
+                default -> System.err.println("Invalid option!");
             }
         }
     }

@@ -9,12 +9,12 @@ public class Test {
     private Parser parser;
     private Grammar grammar;
 
-    public void testAll() throws IOException {
+    public void testAll() throws Exception {
         test1();
         test2();
     }
 
-    public void test1() throws IOException {
+    public void test1() throws Exception {
         grammar = Grammar.fromFile("g1.txt");
         parser = new Parser(grammar);
 
@@ -49,7 +49,7 @@ public class Test {
         }
     }
 
-    public void test2() throws IOException {
+    public void test2() throws Exception {
         grammar = Grammar.fromFile("g2.txt");
         parser = new Parser(grammar);
 
