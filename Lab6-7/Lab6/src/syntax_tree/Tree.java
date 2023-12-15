@@ -6,7 +6,7 @@ import utils.TableEntry;
 import java.util.*;
 public class Tree {
     private Node root;
-    private Grammar grammar;
+    private final Grammar grammar;
     private int crt;
     private List<String> ws;
     private int indexInTreeSequence;
@@ -21,59 +21,65 @@ public class Tree {
 
     public Node build(List<String> ws) {
         this.ws = ws;
-        return buildRecursive(grammar.getS());
+        return buildTree(grammar.getS());
     }
 
-    private Node buildRecursive(String currentSymbol) {
-        if (Objects.equals(currentSymbol, "E") || ws.isEmpty() || (ws.size() == 1 && ws.contains("E"))) {
+    private Node buildTree(String currentSymbol) {
+        if (Objects.equals(currentSymbol, "E") || ws.isEmpty()) {
             return null;
         }
 
         Node node = new Node(currentSymbol, null, null);
-        Node lastSibling = null;
         if (this.root == null) {
             this.root = node;
         }
 
-        if (grammar.isTerminal(currentSymbol)) {
-            if (currentSymbol.equals(ws.get(0))) {
-                return node;
-            } else {
-                return null;
-            }
-        } else {
-            List<String> productions = grammar.getProductionsFor(currentSymbol);
-
-            for (String production : productions) {
-                List<String> productionSymbols = List.of(production.trim().split(" "));
-
-                for (String symbol : productionSymbols) {
-                    Node child = buildRecursive(symbol);
-                    if (child == null) {
-                        break;
-                    }
-
-                    if (lastSibling == null) {
-                        node.setChild(child);
-                    } else {
-                        lastSibling.setRightSibling(child);
-                    }
-
-                    lastSibling = child;
-                    if (grammar.isTerminal(child.getValue())) {
-                        ws = ws.subList(1, ws.size());
-                    }
-                }
-
-                if (lastSibling != null) {
-                    break;  // Production matched, exit the loop
-                }
-            }
+        if (ws.size() == 1 && ws.contains("E")) {
             return node;
         }
+
+        if (grammar.isTerminal(currentSymbol)) {
+            return node;
+        }
+
+        List<String> productions = grammar.getProductionsFor(currentSymbol);
+        for (String production: productions) {
+            List<String> symbols = List.of(production.trim().split(" "));
+            List<Node> children = new ArrayList<>();
+            boolean productionIsValid = true;
+            int index = 0;
+            for (String symbol: symbols) {
+                if (!Objects.equals(symbol, ws.get(index))) {
+                    productionIsValid = false;
+                    break;
+                }
+                index += 1;
+            }
+
+            if (!productionIsValid) {
+                continue;
+            }
+            else {
+                ws = ws.subList(symbols.size(), ws.size());
+            }
+
+            for (String symbol: symbols) {
+                Node child = buildTree(symbol);
+                if (child == null) {
+                    break;
+                }
+
+                if (node.getChild() == null) {
+                    node.setChild(child);
+                }
+                children.add(child);
+                if (children.size() > 1) {
+                    children.get(children.size() - 2).setRightSibling(child);
+                }
+            }
+        }
+        return node;
     }
-
-
 
     public void printTable() {
         bfs(root, -1, -1);
@@ -101,8 +107,6 @@ public class Tree {
             return Collections.emptyList();
         }
     }
-
-
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
@@ -114,4 +118,3 @@ public class Tree {
         return result.toString();
     }
 }
-

@@ -3,7 +3,7 @@ E = {integer, string, char, arr, identifier, unsigned_integer, (, ), [, ], if, e
 S = program
 P = {
     program -> start statement_list,
-    declaration -> simple_type ( identifier declaration' | array_declaration,
+    declaration -> simple_type identifier declaration' | array_declaration,
     declaration' -> E | pure_identifier_list declaration'' | [ unsigned_integer ] ; declaration,
     declaration'' -> E | ; pure_identifier_list declaration'',
     simple_type -> integer | string | char,

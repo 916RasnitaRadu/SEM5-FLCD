@@ -192,59 +192,6 @@ public class Parser {
         this.table.put(new AbstractMap.SimpleEntry<>("$", "$"), "acc");
     }
 
-//    public String evaluateSequence(List<String> w) {
-//        Stack<String> stack = new Stack<>();
-//        stack.add("$");
-//        stack.add(this.grammar.getS());
-//
-//        StringBuilder output = new StringBuilder();
-//
-//        while (!stack.peek().equals("$") && !w.isEmpty()) {
-//            System.out.println(w + ", " + stack);
-//            if (w.get(0).equals(stack.peek())) {
-//                w.remove(0);
-//                stack.pop();
-//            }
-//            else {
-//                String x = w.get(0);
-//                String a = stack.peek();
-//                Pair<String, String> pair = new Pair<>(a, x);
-//
-//                if (!this.table.containsKey(pair)) {
-//                    return null;
-//                }
-//                else {
-//                    stack.pop();
-//                    String rhs = this.table.get(pair);
-//                    List<String> rhsList = this.grammar.splitRhs(rhs);
-//
-//                    for (int i = rhsList.size() - 1; i >= 0; i--) {
-//                        if (!rhsList.get(i).equals("E")) {
-//                            stack.add(rhsList.get(i));
-//                        }
-//                    }
-//                    output.append(rhs).append(" ");
-//                }
-//                System.out.println(output);
-//            }
-//        }
-//        if (stack.peek().equals("E") && !w.isEmpty()) {
-//            return null;
-//        }
-//        else if (!w.isEmpty()) {
-//            while (!stack.peek().equals("E")) {
-//                String a = stack.peek();
-//                Pair<String, String> pair = new Pair<>(a, "$");
-//                if (table.containsKey(pair)) {
-//                    output.append(table.get(pair)).append(" ");
-//                }
-//                stack.pop();
-//            }
-//            return output.toString();
-//        }
-//        return output.toString();
-//    }
-
     public String evaluateSequence(List<String> sequence) {
         Stack<String> alpha = new Stack<>();
         Stack<String> beta = new Stack<>();

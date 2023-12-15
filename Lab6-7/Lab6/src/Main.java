@@ -19,8 +19,8 @@ public class Main {
             String line;
             while ((line = br.readLine()) != null) {
                 String symbol = line;
-                if (line.contains("->")) {
-                    symbol = List.of(line.split("->")).get(0);
+                if (line.contains("-")) {
+                    symbol = List.of(line.split("-")).get(0);
                 }
                 sequence.add(symbol.trim());
             }
@@ -65,7 +65,7 @@ public class Main {
                         else {
                             System.out.println(result);
                             Tree tree = new Tree(grammar);
-                            tree.build(readSequence("seq.txt"));
+                            tree.build(List.of(result.split(" ")));
                             tree.printTable();
                         }
                         break;
@@ -77,6 +77,16 @@ public class Main {
                         System.out.println("Follow: " + parser.getFollowSet());
                         for (Map.Entry<String, String> k : parser.getTable().keySet()) {
                             System.out.println("<" + k.getKey() + " ; " + k.getValue() + ">" + " -> " + parser.getTable().get(k));
+                        }
+                        String result2 = parser.evaluateSequence(readSequence("pifp1.txt"));
+                        if (result2 == null) {
+                            System.err.println("Sequence not accepted");
+                        }
+                        else {
+                            System.out.println(result2);
+                            Tree tree = new Tree(grammar);
+                            tree.build(List.of(result2.split(" ")));
+                            tree.printTable();
                         }
                         break;
                     case "x":
