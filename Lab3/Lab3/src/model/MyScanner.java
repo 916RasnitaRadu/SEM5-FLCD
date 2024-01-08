@@ -55,7 +55,7 @@ public class MyScanner {
 
     public void scan(String fileName) {
         try {
-            Path file = Path.of("src/input/" + fileName);
+            Path file = Path.of("D:\\Faculta\\LFTC\\SEM5-FLCD\\Lab3\\Lab3\\src\\input\\" + fileName);
             setProgram(Files.readString(file));
 
             index = 0;

@@ -230,7 +230,7 @@ public class Parser {
                 }
             }
             else {
-                System.out.println("Syntax error for key " + key);
+                System.out.println("Syntax error for key " + key.getKey() + "; " + key.getValue());
                 System.out.println("Current alpha and beta for sequence parsing:");
                 System.out.println(alpha);
                 System.out.println(beta);

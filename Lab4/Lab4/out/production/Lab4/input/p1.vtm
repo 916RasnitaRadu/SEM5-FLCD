@@ -1,12 +1,11 @@
 start
-integer a
-read(a)
+integer a;
+read(a);
 
-integer sum
+integer sum;
 sum = 0
 
-for (integer i = 1 ; i < a ; i = i + 1) {
-    sum = sum + i
-}
+for (integer i = 1 ; i < a ; i = i + 1)
+    sum = sum + i;
 
-print(sum)
+print(sum);

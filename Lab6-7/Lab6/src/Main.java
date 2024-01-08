@@ -70,7 +70,7 @@ public class Main {
                         }
                         break;
                     case "2":
-                        grammar = Grammar.fromFile("g2.txt");
+                        grammar = Grammar.fromFile("g3.txt");
                         parser = new Parser(grammar);
                         System.out.println(grammar);
                         System.out.println("First: " + parser.getFirstSet());

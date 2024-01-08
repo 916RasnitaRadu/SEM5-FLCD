@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="120029d6-6c13-4344-840b-ebd3fc76e0c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/FiniteAutomata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/FiniteAutomata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/Transition.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/Lab4/out/production/Lab4/finite_automata/Transition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/Lab4/src/finite_automata/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/Lab4/src/finite_automata/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab3/src/input/p1.vtm" beforeDir="false" afterPath="$PROJECT_DIR$/Lab3/src/input/p1.vtm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab3/src/model/MyScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab3/src/model/MyScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab6-7/Documentation.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab6-7/Documentation.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab6-7/Documentation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab6-7/Documentation.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab6-7/Lab6.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab6-7/Lab6/g2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab6-7/Lab6/g2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab6-7/Lab6/pifp1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab6-7/Lab6/pifp1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab6-7/Lab6/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab6-7/Lab6/src/parser/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,14 +29,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Faculta/LFTC/SEM5-FLCD/Lab3&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Faculta/LFTC/SEM5-FLCD/Lab4/Lab4"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,6 +47,7 @@
       <updated>1699626301807</updated>
       <workItem from="1699626303415" duration="41000" />
       <workItem from="1700202037877" duration="28000" />
+      <workItem from="1703687078013" duration="1316000" />
     </task>
     <servers />
   </component>
@@ -59,5 +64,22 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Lab3/src/Main.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((java.util.ArrayList)((MyScanner)this).programInternalForm).get(2)" custom="model.MyScanner,java.util.ArrayList" />
+        <watch expression="((java.util.ArrayList)((MyScanner)this).programInternalForm).get(2)" custom="model.MyScanner,java.util.ArrayList" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
