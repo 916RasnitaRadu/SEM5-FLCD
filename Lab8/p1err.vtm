@@ -1,8 +1,8 @@
 strt
 
-int sum;
-
-read(a);
+integer sum;
+integer 2a;
+read(2a);
 
 sum = 0;
 

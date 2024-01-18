@@ -1,22 +1,34 @@
 package syntax_tree;
 
 import grammar.Grammar;
+import syntax_tree.Node;
+import utils.TableEntry;
 import utils.TableEntry;
 
-import java.util.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+
 public class Tree {
     private Node root;
-    private final Grammar grammar;
+    private Grammar grammar;
     private int crt;
     private List<String> ws;
-    private int indexInTreeSequence;
+    private FileWriter fw;
 
-    public Tree(Grammar grammar) {
+    public Tree(Grammar grammar, String filename) {
         this.root = null;
         this.grammar = grammar;
         this.crt = 0;
         this.ws = new ArrayList<>();
-        this.indexInTreeSequence = 1;
+        try {
+            fw = new FileWriter(filename);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public Node build(List<String> ws) {
@@ -83,6 +95,11 @@ public class Tree {
 
     public void printTable() {
         bfs(root, -1, -1);
+        try {
+            this.fw.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private List<TableEntry> bfs(Node node, Integer fatherCrt, Integer rightSiblingCrt) {
@@ -90,6 +107,12 @@ public class Tree {
             return Collections.emptyList();
         }
         System.out.printf("%d | %s | %d | %d%n", crt, node.getValue(), fatherCrt, rightSiblingCrt);
+
+        try {
+            this.fw.write( crt + " | " + node.getValue() + " | " + fatherCrt + " | " + rightSiblingCrt + '\n');
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
 
         int crt = this.crt;
         this.crt += 1;
@@ -107,6 +130,8 @@ public class Tree {
             return Collections.emptyList();
         }
     }
+
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
